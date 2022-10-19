@@ -6,7 +6,8 @@ public class Obstaculos
 {
     static final int Ancho=50;
     static final int Alto=100;
-    static int obstaculoX=-5;
+    public static int coordenadasEnX;
+    public static int obstaculoX=-5;
     static int coordenadaEnX=1200;
     int coordenadaEnY=250;
 
@@ -32,13 +33,39 @@ public class Obstaculos
         }
         else
         {
-            coordenadaEnX+=obstaculoX;
+            if(colision())
+            {
+                if(juego.vidas==0)
+                {
+                    juego.finJuego();
+                }
+                else
+                {
+                    juego.perderVida();
+                }
+            }
+            else
+            {
+                coordenadaEnX+=obstaculoX;
+            }
+
         }
 
+    }
+
+    public boolean colision()
+    {
+        return juego.personaje.getBounds().intersects(getBouds());
     }
 
     public void paint(Graphics2D graficos)
     {
         graficos.fillRect(coordenadaEnX,coordenadaEnY,Ancho,Alto);
     }
+
+    public Rectangle getBouds()
+    {
+        return new Rectangle(coordenadaEnX-5,coordenadaEnY,Ancho,Alto);
+    }
+
 }

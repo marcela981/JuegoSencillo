@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 public class Interfaz extends JPanel
@@ -20,6 +22,24 @@ public class Interfaz extends JPanel
 
     public Interfaz()
     {
+        addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                personaje.keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
+        setFocusable(true);
     }
 
     public void paintComponet(Graphics graficos)
@@ -68,6 +88,7 @@ public class Interfaz extends JPanel
         bloque.paint(graficos);
 
         bloque.mover();
+        personaje.mover();
 
     }
 
@@ -87,5 +108,15 @@ public class Interfaz extends JPanel
             graficas2.setColor(Color.red);
             graficas2.drawString("Se te acabaron las oportunidades",((float)getBounds().getCenterX()/2)+170,70);
         }
+    }
+
+    public void finJuego()
+    {
+        terminarJuego=true;
+    }
+
+    public void perderVida()
+    {
+        perderVida=true;
     }
 }
