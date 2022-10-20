@@ -1,11 +1,36 @@
+/*
+  Archivo: Jugador.java
+  Autor: Marcela Mazo
+  Email: marcela.mazo@correounivalle.edu.co
+  Modificado por: Marcela Mazo
+  <marcela.mazo@correounivalle.edu.co>
+  Fecha creación: 2022-10-16
+  Fecha última modificación: 2022-10-19
+  Versión: 1.2.1
+  Licencia: GPL
+*/
+
+/*
+ CLASE: Jugador
+ INTENCIÓN: Modelamos el personaje que itnteractua en el juego, este podrá que manejado con las flechas del techado
+ - Rescatngulo pintado
+ - Se puede mover con flechas
+ - Puede saltar y caer
+ RELACIONES:
+ - conoce los obstaculos
+ */
+
+
 package gui;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.Rectangle;
 
+//Modela la clase jugador
 public class Jugador
 {
+    //Atributos del jugador
     static final int Ancho=100;
      static final int Alto=100;
     int coordenadasEnX=50;

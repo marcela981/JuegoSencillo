@@ -1,3 +1,34 @@
+/*
+  Archivo: Interfaz.java
+  Autor: Marcela Mazo
+  Email: marcela.mazo@correounivalle.edu.co
+  Modificado por: Marcela Mazo
+  <marcela.mazo@correounivalle.edu.co>
+  Fecha creación: 2022-10-16
+  Fecha última modificación: 2022-10-19
+  Versión: 1.2.1
+  Licencia: GPL
+*/
+
+
+/*
+ CLASE: Interfaz
+ INTENCIÓN: En la clase interfaz se prentende pintar todo lo que se verá en pantalla,
+           además de modelar las ordenes de teclado en la clase jugador,
+           hacer que pierda vidas cuando este colisione con los obstaculos, y gane puntos cuando los esquive
+           también su fondo cambiará cada vez que se aumente de nivel.
+ - Definir objetos (personaje, bloques y fondo)
+ - Pintar el fondos
+ - Pinta los obstaculos
+ - Pinta caracteriscias del jugador
+ RELACIONES:
+ - conoce los obstaculos
+ - conoce el jugador
+ - conoce tablero
+ */
+
+
+
 package gui;
 
 import javax.swing.*;
@@ -8,6 +39,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
+//Modela los obetos de las clases, jugador, obstaculo y fondo
 public class Interfaz extends JPanel
 {
     Jugador personaje=new Jugador(this);
@@ -30,7 +62,9 @@ public class Interfaz extends JPanel
             }
 
             @Override
-            public void keyPressed(KeyEvent e) {
+            public void keyPressed(KeyEvent e)
+                    //Salta cada vez que se preiona la barra espaciadora
+            {
                 personaje.keyPressed(e);
             }
 

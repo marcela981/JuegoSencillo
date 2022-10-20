@@ -1,11 +1,37 @@
+/*
+  Archivo: Obstaculos.java
+  Autor: Marcela Mazo
+  Email: marcela.mazo@correounivalle.edu.co
+  Modificado por: Marcela Mazo
+  <marcela.mazo@correounivalle.edu.co>
+  Fecha creación: 2022-10-16
+  Fecha última modificación: 2022-10-19
+  Versión: 1.2.1
+  Licencia: GPL
+*/
+
+/*
+ CLASE: Obstaculos
+ INTENCIÓN: Tiene como fin representar los diferentes obstaculos del juego
+ - Describe el obstaculo Bloque
+ RELACIONES:
+ - conoce el jugador
+ */
+
+
+
 package gui;
 
 import java.awt.*;
 
+
 public class Obstaculos
 {
+    //Variables que delimitan el obstaculo
+    //Tamaño del obstaculo
     static final int Ancho=50;
     static final int Alto=100;
+    //Coordenadas del obstaculo en la interfaz
     public static int coordenadasEnX;
     public static int obstaculoX=-5;
     static int coordenadaEnX=1200;
@@ -18,6 +44,7 @@ public class Obstaculos
         this.juego=juego;
     }
 
+    //Cada vez que el personaje colisione conn un obstaculo este genera puntos
     public void mover()
     {
         if(coordenadaEnX<=-50)
@@ -32,6 +59,7 @@ public class Obstaculos
             }
         }
         else
+        //Si este colisiona cierta cantidas de veces el uego termina
         {
             if(colision())
             {
@@ -40,6 +68,7 @@ public class Obstaculos
                     juego.finJuego();
                 }
                 else
+                //Si el jugador colisiona con el obeto pierde una vida
                 {
                     juego.perderVida();
                 }
