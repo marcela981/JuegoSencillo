@@ -1,13 +1,10 @@
-import gui.Interfaz;
-import gui.Jugador;
-import gui.Obstaculos;
+import gui.*;
 
 import javax.swing.*;
 import javax.swing.JFrame;
-import java.security.Principal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import gui.Obstaculos;
+import gui.Interfaz;
 
 public class Main
 {
@@ -54,7 +51,7 @@ public class Main
                 }
                 catch (InterruptedException ex)
                 {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE,null,ex );
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE,null,ex );
                 }
 
                 if (juego.perderVida)

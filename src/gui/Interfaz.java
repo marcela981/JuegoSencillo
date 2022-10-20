@@ -12,8 +12,9 @@ public class Interfaz extends JPanel
 {
     Jugador personaje=new Jugador(this);
     Obstaculos bloque = new Obstaculos(this);
-    Tablero fondo = new Tablero();
+    Tablero fondo = new Tablero(this);
 
+    //Variables del juego
     public boolean terminarJuego = false;
     public boolean perderVida = false;
     public int puntos = 0;
@@ -46,36 +47,44 @@ public class Interfaz extends JPanel
     {
         super.paintComponent(graficos);
         Graphics2D graficas2=(Graphics2D)graficos;
-        graficas2.setPaint(Color.WHITE);
-
         dibujar(graficas2);
         dibujarPuntaje(graficas2);
+
+        graficas2.setPaint(Color.WHITE);
+
     }
 
     public void dibujar(Graphics2D graficos)
     {
-        switch (niveles) {
-            case 1 -> {
+        switch (niveles)
+        {
+            case 1 ->
+            {
                 graficos.setColor(Color.YELLOW);
                 fondo.paint(graficos);
             }
-            case 2 -> {
+            case 2 ->
+            {
                 graficos.setColor(Color.PINK);
                 fondo.paint(graficos);
             }
-            case 3 -> {
+            case 3 ->
+            {
                 graficos.setColor(Color.MAGENTA);
                 fondo.paint(graficos);
             }
-            case 4 -> {
+            case 4 ->
+            {
                 graficos.setColor(Color.CYAN);
                 fondo.paint(graficos);
             }
-            case 5 -> {
+            case 5 ->
+            {
                 graficos.setColor(Color.GREEN);
                 fondo.paint(graficos);
             }
-            case 6 -> {
+            case 6 ->
+            {
                 graficos.setColor(Color.WHITE);
                 fondo.paint(graficos);
             }
