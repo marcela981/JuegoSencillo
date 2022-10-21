@@ -1,7 +1,7 @@
 /*
   Archivo: Interfaz.java
-  Autor: Marcela Mazo
-  Email: marcela.mazo@correounivalle.edu.co
+  Autor: Marcela Mazo, Hassen Ortiz
+  Email: <marcela.mazo@correounivalle.edu.co> <hasse.ortiz@correounivalle.edu.co>
   Modificado por: Marcela Mazo
   <marcela.mazo@correounivalle.edu.co>
   Fecha creación: 2022-10-16
@@ -40,11 +40,11 @@ import java.awt.event.KeyListener;
 
 
 //Modela los obetos de las clases, jugador, obstaculo y fondo
-public class Interfaz extends JPanel
+public class Interfaz extends Canvas 
 {
     Jugador personaje=new Jugador(this);
     Obstaculos bloque = new Obstaculos(this);
-    Tablero fondo = new Tablero(this);
+    Tablero fondo = new Tablero();
 
     //Variables del juego
     public boolean terminarJuego = false;
@@ -79,7 +79,7 @@ public class Interfaz extends JPanel
 
     public void paintComponet(Graphics graficos)
     {
-        super.paintComponent(graficos);
+        super.paint(graficos);
         Graphics2D graficas2=(Graphics2D)graficos;
         dibujar(graficas2);
         dibujarPuntaje(graficas2);

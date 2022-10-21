@@ -1,7 +1,7 @@
 /*
   Archivo: Obstaculos.java
-  Autor: Marcela Mazo
-  Email: marcela.mazo@correounivalle.edu.co
+  Autor: Marcela Mazo, Hassen Ortiz
+  Email: <marcela.mazo@correounivalle.edu.co> <hasse.ortiz@correounivalle.edu.co>
   Modificado por: Marcela Mazo
   <marcela.mazo@correounivalle.edu.co>
   Fecha creación: 2022-10-16
