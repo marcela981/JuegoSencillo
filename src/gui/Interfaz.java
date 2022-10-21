@@ -40,11 +40,11 @@ import java.awt.event.KeyListener;
 
 
 //Modela los obetos de las clases, jugador, obstaculo y fondo
-public class Interfaz extends Canvas 
+public class Interfaz extends JPanel
 {
     Jugador personaje=new Jugador(this);
     Obstaculos bloque = new Obstaculos(this);
-    Tablero fondo = new Tablero();
+    Tablero fondo = new Tablero(this);
 
     //Variables del juego
     public boolean terminarJuego = false;
@@ -63,7 +63,7 @@ public class Interfaz extends Canvas
 
             @Override
             public void keyPressed(KeyEvent e)
-                    //Salta cada vez que se preiona la barra espaciadora
+            //Salta cada vez que se preiona la barra espaciadora
             {
                 personaje.keyPressed(e);
             }
@@ -79,7 +79,7 @@ public class Interfaz extends Canvas
 
     public void paintComponet(Graphics graficos)
     {
-        super.paint(graficos);
+        super.paintComponent(graficos);
         Graphics2D graficas2=(Graphics2D)graficos;
         dibujar(graficas2);
         dibujarPuntaje(graficas2);
