@@ -1,12 +1,12 @@
 /*
-  Archivo: Obstaculos.java
-  Autor: Marcela Mazo, Hassen Ortiz
+  Archivo: Obstaculo.java
+  Autor: Marcela Mazo
   Email: <marcela.mazo@correounivalle.edu.co> <hasse.ortiz@correounivalle.edu.co>
   Modificado por: Marcela Mazo
   <marcela.mazo@correounivalle.edu.co>
   Fecha creación: 2022-10-16
-  Fecha última modificación: 2022-10-19
-  Versión: 1.2.1
+  Fecha última modificación: 2022-11-16
+  Versión: 1.3.1
   Licencia: GPL
 */
 
@@ -18,83 +18,84 @@
  - conoce el jugador
  */
 
-
-
-package gui;
+package Juego;
 
 import java.awt.*;
 
 
-public class Obstaculos
+public class  Obstaculo
 {
     //Variables que delimitan el obstaculo
     //Tamaño del obstaculo
-    static final int Ancho=50;
-    static final int Alto=100;
-    //Coordenadas del obstaculo en la interfaz
+    static final int ancho=50;
+    static final int alto=50;
+
+    //Coordendas del obstaculo
     public static int coordenadasEnX;
     public static int obstaculoX=-5;
-    static int coordenadaEnX=1200;
-    int coordenadaEnY=250;
+    static int getcoordenadasEnX=1200;
+    public static int coordenadasEnY=250;
 
-    Interfaz juego;
+    Tablero juego;
 
-    public Obstaculos(Interfaz juego)
+    public Obstaculo(Tablero juego)
     {
         this.juego=juego;
     }
 
-    //Cada vez que el personaje colisione conn un obstaculo este genera puntos
+    //Cada vez que el personaje impacte el obstaculo este genera puntos
     public void mover()
     {
-        if(coordenadaEnX<=-50)
+        if (coordenadasEnX<=-50)
         {
             juego.puntos++;
-            coordenadaEnX=1200;
-            if(juego.puntos==3 | juego.puntos==6 | juego.puntos==9 |  juego.puntos==12 |  juego.puntos==15)
+            coordenadasEnX=1200;
+            if(juego.puntos==3 | juego.puntos==6 | juego.puntos ==9 | juego.puntos==12)
             {
-
                 obstaculoX+=-2;
                 juego.niveles++;
             }
         }
-        else
-        //Si este colisiona cierta cantidas de veces el uego termina
+        else//Si este colisiona cierta cantidad de veces el juego termina
         {
             if(colision())
             {
                 if(juego.vidas==0)
                 {
-                    juego.finJuego();
+                    juego.finjuego();
                 }
+                //Si el jugadir colisiona con el objeto pierde una vida
                 else
-                //Si el jugador colisiona con el obeto pierde una vida
                 {
                     juego.perderVida();
                 }
             }
             else
             {
-                coordenadaEnX+=obstaculoX;
+                coordenadasEnX+=obstaculoX;
             }
-
         }
-
     }
 
-    public boolean colision()
+    private boolean colision()
+    {
+
+        return false;
+    }
+
+    public boolean colison()
     {
         return juego.personaje.getBounds().intersects(getBouds());
     }
 
-    public void paint(Graphics2D graficos)
-    {
-        graficos.fillRect(coordenadaEnX,coordenadaEnY,Ancho,Alto);
-    }
-
     public Rectangle getBouds()
     {
-        return new Rectangle(coordenadaEnX-5,coordenadaEnY,Ancho,Alto);
+        return new Rectangle(coordenadasEnX-5,coordenadasEnY,ancho,alto);
+    }
+
+    public static void paint(Graphics2D graficos)
+    {
+        graficos.fillRect(coordenadasEnX,coordenadasEnY,ancho,alto);
     }
 
 }
