@@ -21,12 +21,9 @@
  - Reconoce los eventos del teclado
  */
 
-package gui;
+package View;
 
 import Controles.MotorGrafico;
-import Juego.Tablero;
-import Juego.Pelota;
-import Juego.EventoTeclado;
 
 import javax.swing.*;
 
@@ -34,7 +31,7 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
 
-   Tablero canvas;
+   public Tablero canvas;
    Pelota p = new Pelota();
 
    public Ventana() {

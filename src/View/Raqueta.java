@@ -16,15 +16,17 @@
  - Describe la raqueta con la que el jugador interactua
  */
 
-package Juego;
+package View;
 
 import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
+import java.awt.*;
 
 
 public class Raqueta {
 
-    private int x, y;
+    public String nickname;
+    public int x, y;
     static final int ANCHO = 10, ALTO = 60;
 
     public Raqueta(int x, int y) {

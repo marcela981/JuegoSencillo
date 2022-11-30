@@ -19,7 +19,7 @@
  */
 
 
-package Juego;
+package View;
 
 import java.awt.event.*;
 

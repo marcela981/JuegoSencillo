@@ -20,7 +20,7 @@
   Sirve para dos jugadores locales.
  */
 
-import gui.Ventana;
+import View.Ventana;
 import javax.swing.JFrame;
 
 

@@ -18,7 +18,9 @@
  - Pintar los puntos y vidas en el juego
  */
 
-package Juego;
+package View;
+
+import jdk.internal.access.JavaSecurityAccess;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -27,6 +29,7 @@ import javax.swing.JPanel;
 
 public class Tablero extends JPanel {
 
+    public JavaSecurityAccess.ProtectionDomainCache jugadores;
     Raqueta r1 = new Raqueta(10, 200);
     Raqueta r2 = new Raqueta(794 - 10 - Raqueta.ANCHO, 200);
     Pelota p = new Pelota();

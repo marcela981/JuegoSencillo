@@ -23,8 +23,8 @@
 
 package Controles;
 
-import Juego.Tablero;
-import Juego.Pelota;
+import View.Tablero;
+import View.Pelota;
 public class MotorGrafico extends Thread {
 
     private final Tablero canvas;

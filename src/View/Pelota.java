@@ -22,7 +22,7 @@
  */
 
 
-package Juego;
+package View;
 
 import java.applet.AudioClip;
 import java.awt.geom.Rectangle2D;
